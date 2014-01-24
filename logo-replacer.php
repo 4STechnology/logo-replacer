@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Logo Replacer
  * Plugin URI: https://github.com/4STechnology/logo-replacer
- * Description: Replace WordPress' logo to user-uploaded one at login and admin screen
+ * Description: Replace WordPress' logo to user-uploaded one at login and navigation bar
  * Version: 1.0
  * Author: 4S Technology <4stech@bis5.net>
  * Author URI: http://4stechnology.wordpress.com
@@ -16,14 +16,16 @@ This program is distributed in the hope that it will be useful, but WITHOUT ANY 
 You should have received a copy of the GNU General Public License along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
-class LogoReplacer4Stech {
+class LogoReplacer {
 	private function replace_login_logo() {
 		if (file_exists(plugin_dir_url(__file__).'/inc/login.png'))
 			replace_logo("login");
 	}
 	private function replace_admin_logo() {
-		if (file_exists(plugin_dir_url(__FILE__).'/inc/admin.png'))
-			replace_logo("admin");
+		if (version_compare('3.8.*', get_bloginfo('version'), '<=')) {
+			if (file_exists(plugin_dir_url(__FILE__).'/inc/admin.png'))
+				replace_logo("admin");
+		} else {/* <= 3.7.x only! */}
 	}
 
 	public function __construct() {
@@ -41,4 +43,4 @@ class LogoReplacer4Stech {
 </style>";
 	}
 }
-new LogoReplacer4Stech();
+new LogoReplacer();
