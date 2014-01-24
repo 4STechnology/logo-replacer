@@ -1,0 +1,26 @@
+=== Logo Replacer ===
+Contributors: @bis5
+Requires at least: 3.8
+Tested up to: 3.8.1
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl.html
+
+Replace WordPress' logo to user-uploaded one at login and navigation bar.
+
+== Description ==
+
+(writting now)
+
+
+== Installation ==
+
+1. Create directory `/wp-content/plugins/logo-replacer` and `/wp-content/plugins/logo-replacer/inc`
+1. Upload `logo-replacer.php` to the `/wp-content/plugins/logo-replacer directory
+1. Upload your custom logo to the `/wp-content/plugins/logo-replacer/inc` directory. For login screen, file name is `logo.png` and 64x64 pixels recommended. (3.7.x >= ONLY)For admin header, file name is `admin.png` and 32x32 pixels recommended.
+1. Activate the plugin through the 'Plugins' menu in WordPress
+
+
+== Changelog ==
+
+= 1.0 =
+* The first release version.
